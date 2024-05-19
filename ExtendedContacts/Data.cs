@@ -27,5 +27,19 @@ namespace ExtendedContacts
                 accounts = new List<Account>();
             }
         }
+        public static void LoadContacts() 
+        {
+            string filePath = $"{login}Contacts.json";
+            if (File.Exists(filePath))
+            {
+                // Deserialize the list of accounts from the file
+                string json = File.ReadAllText(filePath);
+                contacts = JsonSerializer.Deserialize<List<Contact>>(json);
+            }
+            else
+            {
+                contacts = new List<Contact>() { new Contact() };
+            }
+        }
     }
 }

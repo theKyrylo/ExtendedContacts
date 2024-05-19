@@ -10,8 +10,8 @@
 
     <Grid Background="White">
         <Grid HorizontalAlignment="Center" Height="270" VerticalAlignment="Center" Width="736">
-            <Image HorizontalAlignment="Left" Height="234" VerticalAlignment="Top" Width="200" Source="/img.png"/>
-            <Button x:Name="ChangeImgButton" Content="Change image" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Background="White" BorderBrush="White" Foreground="#FF1F00FF" Margin="38,244,0,0"/>
+            <Image x:Name="Img" HorizontalAlignment="Left" Height="234" VerticalAlignment="Top" Width="200" Source="/img.png"/>
+            <Button x:Name="ChangeImgButton" Content="Change image" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Background="White" BorderBrush="White" Foreground="#FF1F00FF" Margin="38,244,0,0" Click="ChangeImgButton_Click"/>
             <Label Content="Name: " HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="18" Margin="203,2,0,0"/>
             <TextBox x:Name="CName" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" FontSize="18" Margin="292,6,0,0"/>
             <Label Content="Surname: " HorizontalAlignment="Left" FontSize="18" VerticalAlignment="Top" Margin="203,41,0,0"/>
@@ -28,9 +28,9 @@
             <Label Content="Adress: " HorizontalAlignment="Left" FontSize="18" VerticalAlignment="Top" Margin="203,120,0,0"/>
             <TextBox x:Name="CAdress" HorizontalAlignment="Left" TextWrapping="Wrap" Width="289" FontSize="18" VerticalAlignment="Top" Margin="203,156,0,0"/>
             <TextBox x:Name="CDateOfBirth" HorizontalAlignment="Left" TextWrapping="Wrap" Width="239" FontSize="18" VerticalAlignment="Top" Margin="497,156,0,0"/>
-            <Button x:Name="SaveButton" Content="Save" HorizontalAlignment="Left" Margin="203,200,0,0" VerticalAlignment="Top" Width="533" Height="30" FontSize="20"/>
-            <Button x:Name="PrevButton" Content="&lt;--" HorizontalAlignment="Left" Margin="203,239,0,0" VerticalAlignment="Top" Width="266" Height="30" FontSize="20"/>
-            <Button x:Name="NextButton" Content="--&gt;" HorizontalAlignment="Left" Margin="470,239,0,0" VerticalAlignment="Top" Width="266" Height="30" FontSize="20"/>
+            <Button x:Name="SaveButton" Content="Save" HorizontalAlignment="Left" Margin="203,200,0,0" VerticalAlignment="Top" Width="533" Height="30" FontSize="20" Click="SaveButton_Click"/>
+            <Button x:Name="PrevButton" Content="&lt;--" HorizontalAlignment="Left" Margin="203,239,0,0" VerticalAlignment="Top" Width="266" Height="30" FontSize="20" Click="PrevButton_Click"/>
+            <Button x:Name="NextButton" Content="--&gt;" HorizontalAlignment="Left" Margin="470,239,0,0" VerticalAlignment="Top" Width="266" Height="30" FontSize="20" Click="NextButton_Click"/>
         </Grid>
     </Grid>
 </Page>

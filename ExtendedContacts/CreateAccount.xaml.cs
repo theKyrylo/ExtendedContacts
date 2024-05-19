@@ -63,7 +63,7 @@ namespace ExtendedContacts
             }
             else
             {
-                MessageBox.Show("Enter all data please", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Enter all data correctly please", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
     }
