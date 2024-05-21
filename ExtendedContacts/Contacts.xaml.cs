@@ -29,6 +29,8 @@ namespace ExtendedContacts
             InitializeComponent();
             Data.LoadContacts();
             InitContacts();
+            AddToListBox();
+            
         }
         public void InitContacts()
         {
@@ -50,13 +52,9 @@ namespace ExtendedContacts
         private void NextButton_Click(object sender, RoutedEventArgs e)
         {
             counter++;
-            if (counter < Data.contacts.Count())
-                InitContacts();
-            else
-            {
+            if (counter >= Data.contacts.Count())
                 Data.contacts.Add(new Contact());
-                InitContacts();
-            }
+            InitContacts();
         }
 
         private void PrevButton_Click(object sender, RoutedEventArgs e)
@@ -79,7 +77,7 @@ namespace ExtendedContacts
             Data.contacts[counter].Sex = CSex.Text;
             Data.contacts[counter].Phone = CPhone.Text;
             Data.contacts[counter].DateOfBitrh = DateTime.Parse(CDateOfBirth.Text);
-
+            AddToListBox();
             // Serialize the list to JSON
             string json = JsonSerializer.Serialize(Data.contacts, new JsonSerializerOptions { WriteIndented = true });
             // Write the JSON string to a file
@@ -106,6 +104,14 @@ namespace ExtendedContacts
                 bitmap.UriSource = new Uri(fileName);
                 bitmap.EndInit();
                 Img.Source = bitmap;
+            }
+        }
+        public void AddToListBox()
+        {
+            ContacsList.Items.Clear();
+            foreach (var x in Data.contacts)
+            {
+                ContacsList.Items.Add(x.Name);
             }
         }
     }
